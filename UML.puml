@@ -1,0 +1,26 @@
+@startuml
+title Template Method - Xuất báo cáo điểm
+abstract class BaoCao {
+  #ten : String[]
+  #diem : double[]
+  +{final} xuatBaoCao() <<Template Method>>
+  #layDuLieu()
+  #inTongKet()
+  #{abstract} taoTieuDe()
+  #{abstract} taoNoiDung()
+}
+class BaoCaoVanBan {
+  #taoTieuDe()
+  #taoNoiDung()
+}
+class BaoCaoHTML {
+  #taoTieuDe()
+  #taoNoiDung()
+}
+class Main {
+  +{static} main(args : String[])
+}
+BaoCao <|-- BaoCaoVanBan
+BaoCao <|-- BaoCaoHTML
+Main ..> BaoCao
+@enduml
